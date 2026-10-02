@@ -2272,6 +2272,11 @@ footer {
     margin-bottom: auto;
 }
 
+.footer-lvl1-left>a>img {
+    max-height: 56px;
+    width: auto;
+}
+
 .footer-lvl1-right-social {
     margin-top: auto;
     margin-bottom: auto;
