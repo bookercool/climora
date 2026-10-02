@@ -36,6 +36,7 @@ function applyReplacements(html, brand) {
   }
   out = out.split("+375 (33) 306-66-67").join(protect(brand.phoneDisplay || "+375 (29) 130-26-53"));
   out = out.split("+375333066667").join(protect(brand.phoneTel || "+375291302653"));
+  out = out.replace(/\s*<div class="footer-lvl2-url">[\s\S]*?<\/div>/i, "");
 
   const pairs = [
     ["AirMixBel", name],
