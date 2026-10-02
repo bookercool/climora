@@ -22,8 +22,12 @@ function applyReplacements(html, brand) {
 
   let out = html;
   out = out.split("https://www.instagram.com/airmix.by/").join(protect(instagram));
+  out = out.split("https://t.me/Alexander_Senko").join(protect(brand.telegram || "https://t.me/ruslankandera"));
+  out = out.split("https://www.tiktok.com/@ruslankandera").join(protect(brand.tiktok || "https://www.tiktok.com/@ruslankandera"));
   out = out.split("mailto:info@airmix.by").join(protect(`mailto:${email}`));
   out = out.split("info@airmix.by").join(protect(email));
+  out = out.split("+375 (33) 306-66-67").join(protect(brand.phoneDisplay || "+375 (29) 130-26-53"));
+  out = out.split("+375333066667").join(protect(brand.phoneTel || "+375291302653"));
 
   const pairs = [
     ["AirMixBel", name],
