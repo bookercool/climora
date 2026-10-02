@@ -2,6 +2,10 @@
 
 Статическая копия [airmix.by](https://airmix.by) с подставляемым именем бренда.
 
+- Сайт: https://bookercool.github.io/climora/
+- Репозиторий: https://github.com/bookercool/climora
+- English: https://bookercool.github.io/climora/en/
+
 <!-- keep-readme -->
 
 ## Имя бренда
