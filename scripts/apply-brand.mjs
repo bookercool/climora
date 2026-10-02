@@ -11,8 +11,8 @@ export async function loadBrand() {
 
 function applyReplacements(html, brand) {
   const name = brand.name || "Climora";
-  const email = brand.email || "info@climora";
-  const instagram = brand.instagram || "https://www.instagram.com/airmix.by/";
+  const email = (brand.email || "").trim();
+  const instagram = (brand.instagram || "").trim();
   const protectedValues = [];
   const protect = (value) => {
     const token = `__BRAND_KEEP_${protectedValues.length}__`;
@@ -21,11 +21,19 @@ function applyReplacements(html, brand) {
   };
 
   let out = html;
-  out = out.split("https://www.instagram.com/airmix.by/").join(protect(instagram));
+  if (instagram) {
+    out = out.split("https://www.instagram.com/airmix.by/").join(protect(instagram));
+  } else {
+    out = out.replace(/\s*<a href="https:\/\/www\.instagram\.com\/airmix\.by\/"[^>]*>[\s\S]*?<\/a>/gi, "");
+  }
   out = out.split("https://t.me/Alexander_Senko").join(protect(brand.telegram || "https://t.me/ruslankandera"));
   out = out.split("https://www.tiktok.com/@ruslankandera").join(protect(brand.tiktok || "https://www.tiktok.com/@ruslankandera"));
-  out = out.split("mailto:info@airmix.by").join(protect(`mailto:${email}`));
-  out = out.split("info@airmix.by").join(protect(email));
+  if (email) {
+    out = out.split("mailto:info@airmix.by").join(protect(`mailto:${email}`));
+    out = out.split("info@airmix.by").join(protect(email));
+  } else {
+    out = out.replace(/\s*<a class="footer-contacts-item" href="mailto:[^"]*"[\s\S]*?<\/a>/gi, "");
+  }
   out = out.split("+375 (33) 306-66-67").join(protect(brand.phoneDisplay || "+375 (29) 130-26-53"));
   out = out.split("+375333066667").join(protect(brand.phoneTel || "+375291302653"));
 
