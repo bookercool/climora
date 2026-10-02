@@ -1,0 +1,12 @@
+window.BRAND = {
+  "name": "Climora",
+  "email": "info@climora",
+  "domain": "climora",
+  "phoneDisplay": "+375 (33) 306-66-67",
+  "phoneTel": "+375333066667",
+  "instagram": "https://www.instagram.com/airmix.by/",
+  "telegram": "https://t.me/Alexander_Senko",
+  "tiktok": "https://www.tiktok.com/@ruslankandera",
+  "formSuccessRu": "Заявка принята. Это статическая копия сайта — письмо на сервер не отправляется.",
+  "formSuccessEn": "Request received. This is a static copy, so the message is not sent to a server."
+};

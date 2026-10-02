@@ -1,0 +1,11 @@
+{
+  "name": "climora",
+  "private": true,
+  "description": "Static rebranded copy of airmix.by",
+  "scripts": {
+    "clone": "node scripts/clone.mjs",
+    "brand": "node scripts/apply-brand.mjs",
+    "build": "node scripts/apply-brand.mjs",
+    "dev": "npx --yes serve . -p 4173"
+  }
+}
